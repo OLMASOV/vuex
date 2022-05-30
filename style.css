@@ -1,0 +1,107 @@
+body,*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+button{
+    width: 40px;
+    height: 40px;
+ background-color: #fff;
+    border: none;
+    transition: .5 s ease;
+   
+}
+button .span{
+    width: 90%;
+    height: 4px;
+    background-color: #000;
+    position: relative;
+    border-radius: 8px;
+    transition: .5s ease;
+}
+button.active{
+    background-color: rgba(0, 0, 0, 0);
+}
+button .span::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    top: -8px;
+    border-radius: 8px;
+    transition: .5s ease;
+}
+button .span::before{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    bottom: -8px;
+    border-radius: 8px;
+    transition: .5s ease;
+}
+.burgermenu{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.356);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    bottom: 0;
+    top: -1500px;
+    right: 0;
+}
+.burgermenu  ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    border-radius: 8px;
+}
+.burgermenu  li{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.burgermenu.burger{
+    top: 0;
+    transition: .6s ease;
+    /* z-index: -11; */
+}
+button.active .span{
+    transform: rotate(50deg);
+    transition: .5s ease;
+    background-color: #fff;
+}
+
+button.active .span::after{
+    transform: rotate(80deg);
+    top: 0;
+    transition: .5s ease;
+    background-color: #fff;
+    
+}
+button.active .span::before{
+    display: none;
+    
+    
+}
